@@ -21,8 +21,14 @@ from subprocess import Popen, PIPE
 
 def git_describe():
     proc = Popen(['git','describe','--always','--long'],stdout=PIPE)
-    desc  = proc.communicate()[0].decode('utf-8').strip()
-    ihash  = desc.rindex('-')
+    stdout, stderr  = proc.communicate()
+    if proc.returncode != 0:
+        raise Exception('git error: %s'%stderr)
+    desc    = stdout[0].decode('utf-8').strip()
+    try:
+        ihash   = desc.rindex('-')
+    except ValueError:
+        raise Exception('No git tag available for version')
     ichange = desc.rindex('-',0,ihash)
     return (desc[0:ichange],desc[ichange+1:ihash],desc[ihash+1:-1])
 
