@@ -24,20 +24,23 @@ def git_describe():
     stdout, stderr  = proc.communicate()
     if proc.returncode != 0:
         raise Exception('git error: %s'%stderr)
-    desc    = stdout[0].decode('utf-8').strip()
+    desc = stdout.decode('utf-8').strip()
     try:
-        ihash   = desc.rindex('-')
+        ihash = desc.rindex('-')
     except ValueError:
-        raise Exception('No git tag available for version')
+        return ('v0.0.0','0',desc)
     ichange = desc.rindex('-',0,ihash)
     return (desc[0:ichange],desc[ichange+1:ihash],desc[ihash+1:-1])
 
 def pep440():
-    tag, changes, hash = git_describe()
-    if changes == 0:
-        return tag
-    else:
-        return "%s.dev%s+%s"%(tag,changes,hash)
+    try:
+        tag, changes, hash = git_describe()
+        if changes == 0:
+            return tag
+        else:
+            return "%s.dev%s+%s"%(tag,changes,hash)
+    except ValueError:
+        return 'v0.0.0'
 
 release = pep440()
 
