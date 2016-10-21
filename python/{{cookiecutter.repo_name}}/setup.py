@@ -16,47 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from setuptools import setup, find_packages
-from subprocess import Popen, PIPE
-
-def git_describe():
-    proc = Popen(['git','describe','--always','--long'],stdout=PIPE)
-    stdout, stderr  = proc.communicate()
-    if proc.returncode != 0:
-        raise Exception('git error: %s'%stderr)
-    desc = stdout.decode('utf-8').strip()
-    try:
-        ihash = desc.rindex('-')
-    except ValueError:
-        return ('v0.0.0','0',desc)
-    ichange = desc.rindex('-',0,ihash)
-    return (desc[0:ichange],desc[ichange+1:ihash],desc[ihash+1:-1])
-
-def pep440():
-    try:
-        tag, changes, hash = git_describe()
-        if changes == 0:
-            return tag
-        else:
-            return "%s.dev%s+%s"%(tag,changes,hash)
-    except ValueError:
-        return 'v0.0.0'
-
-release = pep440()
-
-requirements = [
-        'six',
-        ]
+from setuptools import setup
 
 setup(
-        name             = '{{cookiecutter.repo_name}}',
-        version          = release,
-        url              = 'https://github.com/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}',
-        packages         = find_packages(exclude=['tests*']),
-        install_requires = requirements,
-
-        author           = '{{cookiecutter.author_name}}',
-        author_email     = '{{cookiecutter.author_email}}',
-        description      = '{{cookiecutter.description}}',
-        license          = 'Apache 2.0',
+        setup_requires=['pbr>=1.9', 'setuptools>=17.1'],
+        pbr=True,
         )
+

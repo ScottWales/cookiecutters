@@ -1,4 +1,6 @@
-# {{cookiecutter.repo_name}}
+# {{cookiecutter.project_name}}
+
+{{cookiecutter.description}}
 
 [![Documentation Status](https://readthedocs.org/projects/{{cookiecutter.repo_name}}/badge/?version=latest)](https://readthedocs.org/projects/{{cookiecutter.repo_name}}/?badge=latest)
 [![Build Status](https://travis-ci.org/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}.svg?branch=master)](https://travis-ci.org/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}})
@@ -10,7 +12,16 @@
 Build Instructions:
 -------------------
 
-    mkdir build && pushd build
-    cmake ..
-    make
-    ctest
+Pip install (into a virtual environment):
+
+    pip install {{cookiecutter.repo_name}}
+
+or
+    
+    pip install git+https://github.com/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}
+
+or (for development)
+
+    git checkout git+https://github.com/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}
+    cd {{cookiecutter.repo_name}}
+    pip install -e '.[dev]'
