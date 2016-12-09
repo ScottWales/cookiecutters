@@ -1,5 +1,6 @@
 {
     "repo_name": "hello",
+    "lib_name": "{{cookiecutter.repo_name|lower|replace('-','_')}}",
     "description": "Sample Project",
     "author_name": "Scott Wales",
     "author_email": "scott.wales@unimelb.edu.au",

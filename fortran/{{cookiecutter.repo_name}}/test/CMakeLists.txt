@@ -1,4 +1,4 @@
-set(SOURCES test_foo.pfunit)
+set(SOURCES test_{{cookiecutter.lib_name}}.pfunit)
 
 include($ENV{PFUNIT}/include/PreprocessMacro.cmake)
 find_library(PFUNIT_LIB libpfunit.a HINTS $ENV{PFUNIT}/lib)
@@ -7,7 +7,7 @@ find_path(PFUNIT_MOD pfunit.mod HINTS $ENV{PFUNIT}/mod)
 
 add_pfunit_sources(pfsources ${SOURCES})
 add_executable(unittests ${pfsources} ${PFUNIT_DRIVER})
-target_link_libraries(unittests ${PFUNIT_LIB} {{cookiecutter.repo_path}})
+target_link_libraries(unittests ${PFUNIT_LIB} {{cookiecutter.lib_name}})
 target_include_directories(unittests PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(unittests PUBLIC ${PFUNIT_MOD})
 target_compile_definitions(unittests PUBLIC USE_MPI)

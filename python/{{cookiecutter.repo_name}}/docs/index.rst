@@ -13,7 +13,6 @@ Contents:
 
    api/autoindex.rst
 
-
 Indices and tables
 ==================
 

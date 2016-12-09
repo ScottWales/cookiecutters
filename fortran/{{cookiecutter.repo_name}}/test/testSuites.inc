@@ -1,3 +1,3 @@
 ! vim: filetype=fortran
 ! List of all test suites
-ADD_TEST_SUITE(test_foo_mod_suite)
+ADD_TEST_SUITE(test_{{cookiecutter.lib_name}}_mod_suite)
