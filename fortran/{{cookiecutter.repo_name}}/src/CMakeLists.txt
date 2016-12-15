@@ -1,7 +1,7 @@
 set(SOURCES {{cookiecutter.lib_name}}.f90)
 
 add_library({{cookiecutter.lib_name}} ${SOURCES})
-target_include_directories(hello PUBLIC
+target_include_directories({{cookiecutter.lib_name}} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
     )
 

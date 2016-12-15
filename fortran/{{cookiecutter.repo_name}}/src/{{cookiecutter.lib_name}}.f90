@@ -15,7 +15,7 @@
 !! See the License for the specific language governing permissions and
 !! limitations under the License.
 
-MODULE {{cookiecutter.lib_name}}
+MODULE {{cookiecutter.lib_name}}_mod
 
 CONTAINS
 

@@ -16,6 +16,6 @@
 !! limitations under the License.
 
 PROGRAM {{cookiecutter.repo_name}}
-    USE {{cookiecutter.lib_name}}
+    USE {{cookiecutter.lib_name}}_mod
 
 END PROGRAM
