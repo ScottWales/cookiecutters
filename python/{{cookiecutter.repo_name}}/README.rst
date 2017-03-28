@@ -17,6 +17,8 @@
 .. image:: https://badge.fury.io/py/{{cookiecutter.repo_name}}.svg
   :target: https://pypi.python.org/pypi/{{cookiecutter.repo_name}}
 
+.. content-marker-for-sphinx
+
 ------------------
 Build Instructions
 ------------------

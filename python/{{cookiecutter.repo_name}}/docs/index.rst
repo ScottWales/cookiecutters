@@ -11,7 +11,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   readme.rst 
    api/autoindex.rst
+   api/modules.rst
 
 Indices and tables
 ==================
