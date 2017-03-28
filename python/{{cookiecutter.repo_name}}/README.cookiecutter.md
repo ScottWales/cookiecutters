@@ -1,6 +1,13 @@
 Python Cookiecutter
 ===================
 
+This cookiecutter makes use of Python Build Reasonableness,
+https://docs.openstack.org/developer/pbr/#pbr, which has some nice features:
+
+ * Version numbers is read from git tags
+ * Nested packages are automatically found
+ * Reads dependencies from requirements.txt
+
 Setup
 -----
 
