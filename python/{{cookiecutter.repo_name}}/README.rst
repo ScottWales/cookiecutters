@@ -33,6 +33,6 @@ or::
 
 or (for development)::
 
-    git checkout git+https://github.com/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}
+    git checkout https://github.com/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}
     cd {{cookiecutter.repo_name}}
     pip install -e '.[dev]'
