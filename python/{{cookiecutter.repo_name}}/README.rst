@@ -45,6 +45,10 @@ Development install::
     source activate {{cookiecutter.package_name}}-dev
     pip install -e '.[dev]'
 
+The `dev-environment.yml` file is for speeding up installs and installing
+packages unavailable on pypi, `requirements.txt` is the source of truth for
+dependencies.
+
 Run tests::
 
     py.test
@@ -52,3 +56,4 @@ Run tests::
 Build documentation::
 
     python setup.py build_sphinx
+    firefox docs/_build/index.html
