@@ -1,10 +1,10 @@
 package:
     name: {{ cookiecutter.repo_name }}
-    version: {{ {{ GIT_DESCRIBE_TAG }} }}
+    version: {{ '{{ GIT_DESCRIBE_TAG }}' }}
 
 build:
-    number: {{ {{ GIT_DESCRIBE_NUMBER }} }}
-    string: {{ {{ GIT_BUILD_STR }} }}
+    number: {{ '{{ GIT_DESCRIBE_NUMBER }}' }}
+    string: {{ '{{ GIT_BUILD_STR }}' }}
 
 source:
     git_url: ../
@@ -34,4 +34,4 @@ about:
     home: https://github.com/{{ cookiecutter.github_account }}/{{ cookiecutter.repo_name }}
     license: Apache 2.0
     license_file: LICENSE
-    summary: {{ coookiecutter.description }}
+    summary: {{ cookiecutter.description }}
