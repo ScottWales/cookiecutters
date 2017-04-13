@@ -8,8 +8,8 @@
   :target: https://readthedocs.org/projects/{{cookiecutter.repo_name}}/?badge=latest
 .. image:: https://travis-ci.org/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}.svg?branch=master
   :target: https://travis-ci.org/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}
-.. image:: https://circleci.com/gh/coecms/ARCCSSive.svg?style=shield
-  :target: https://circleci.com/gh/coecms/ARCCSSive
+.. image:: https://circleci.com/gh/{{cookiecutter.github_account}}/{{cookiecutter.package_name}}.svg?style=shield
+  :target: https://circleci.com/gh/{{cookiecutter.github_account}}/{{cookiecutter.package_name}}
 .. image:: http://codecov.io/github/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}/coverage.svg?branch=master
   :target: http://codecov.io/github/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}?branch=master
 .. image:: https://landscape.io/github/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}/master/landscape.svg?style=flat
@@ -18,8 +18,6 @@
   :target: https://codeclimate.com/github/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}
 .. image:: https://badge.fury.io/py/{{cookiecutter.repo_name}}.svg
   :target: https://pypi.python.org/pypi/{{cookiecutter.repo_name}}
-.. image:: https://circleci.com/gh/{{cookiecutter.github_account}}/{{cookiecutter.package_name}}.svg?style=svg
-  :target: https://circleci.com/gh/{{cookiecutter.github_account}}/{{cookiecutter.package_name}}
 
 .. content-marker-for-sphinx
 
