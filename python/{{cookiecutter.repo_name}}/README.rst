@@ -21,9 +21,9 @@
 
 .. content-marker-for-sphinx
 
----
+-------
 Install
----
+-------
 
 Conda install::
 
@@ -34,8 +34,12 @@ Pip install (into a virtual environment)::
     pip install {{cookiecutter.repo_name}}
 
 ---
-Develop
+Use
 ---
+
+-------
+Develop
+-------
 
 Development install::
 
@@ -57,3 +61,7 @@ Build documentation::
 
     python setup.py build_sphinx
     firefox docs/_build/index.html
+
+Upload documentation::
+
+    git subtree push --prefix docs/_build/html/ origin gh-pages
