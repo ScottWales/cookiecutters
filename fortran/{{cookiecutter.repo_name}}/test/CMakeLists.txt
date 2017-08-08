@@ -13,3 +13,6 @@ target_include_directories(unittests PUBLIC ${PFUNIT_MOD})
 target_compile_definitions(unittests PUBLIC USE_MPI)
 add_test(NAME unittests COMMAND mpirun -np 4 $<TARGET_FILE:unittests>)
 
+if (${CMAKE_Fortran_COMPILER_ID} MATCHES GNU)
+    target_compile_options(unittests PRIVATE -Wno-unused-parameter -Wno-unused-variable -Wno-maybe-uninitialized)
+endif()
