@@ -1,9 +1,0 @@
-name: {{cookiecutter.package_name}}-dev
-
-channels:
-    - conda-forge
-    - defaults
-
-dependencies:
-    - python
-    - pbr

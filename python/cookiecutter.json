@@ -1,9 +1,0 @@
-{
-    "project_name": "Sample Project",
-    "repo_name": "{{cookiecutter.project_name|replace(' ','-')}}",
-    "package_name": "{{cookiecutter.project_name|lower|replace(' ','')|replace('-','')}}",
-    "description": "{{cookiecutter.project_name}}",
-    "author_name": "Scott Wales",
-    "author_email": "scott.wales@unimelb.edu.au",
-    "github_account": "ScottWales"
-}
