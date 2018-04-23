@@ -26,7 +26,7 @@ author = '{{cookiecutter.author_name}}'
 import {{cookiecutter.package_name}}
 
 # The short X.Y version
-version = {{cookiecutter.pacakge_name}}.__version__
+version = {{cookiecutter.package_name}}.__version__
 # The full version, including alpha/beta/rc tags
 release = {{cookiecutter.package_name}}.__version__
 
