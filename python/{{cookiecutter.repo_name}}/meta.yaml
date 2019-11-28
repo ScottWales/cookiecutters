@@ -1,0 +1,30 @@
+{%raw%}{% set data = load_setup_py_data() %}{%endraw%}
+
+package:
+    name: {{cookiecutter.package_name}}
+    version: {%raw%}{{ data.get('version') }}{%endraw%}
+
+source:
+    path: .
+
+{%raw%}
+build:
+    script: "{{ PYTHON }} -m pip install . --no-deps"
+    noarch: python
+    number: {{ GIT_DESCRIBE_NUMBER }}
+{%endraw%}
+
+requirements:
+    host:
+        - python
+        - pip
+    run:
+        - python >=3.6
+
+test:
+    requires:
+        - pytest
+    files:
+        - test
+    imports:
+        - {{cookiecutter.package_name}}
