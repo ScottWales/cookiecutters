@@ -22,9 +22,16 @@ requirements:
         - python >=3.6
 
 test:
-    requires:
-        - pytest
-    files:
-        - test
     imports:
         - {{cookiecutter.package_name}}
+    requires:
+        - pytest
+        - pytest-cov
+    files:
+        - test
+        - src
+    script_env:
+        - TEST_OUTPUT
+    commands:
+        - py.test --cov=src --junit-xml=${TEST_OUTPUT:-.}/pytest/junit.xml --cov-report=xml:${TEST_OUTPUT:-.}/cov/coverage.xml
+
