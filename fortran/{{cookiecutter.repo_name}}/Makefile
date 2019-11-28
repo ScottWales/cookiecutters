@@ -1,18 +1,21 @@
-all: | build
-	mkdir -p build
-	cd build && cmake ..
-	${MAKE} -C build
+CMAKE_FLAGS=""
 
-debug: | build
-	mkdir -p build
-	cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug
-	${MAKE} -C build
+ifdef RELEASE
+    CMAKE_FLAGS+=-DCMAKE_BUILD_TYPE=Release
+else
+    CMAKE_FLAGS+=-DCMAKE_BUILD_TYPE=Debug
+endif
 
-clean:
-	${RM} -r build
+top-master: all
 
 check: all
 	cd build && ctest
 
-build:
-	mkdir -p $@
+clean:
+	${RM} -r build
+
+.DEFAULT:
+	mkdir -p build
+	${LOAD_ENV}; cd build && cmake .. ${CMAKE_FLAGS} && ${MAKE} $@
+
+
